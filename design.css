@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #d8b4fe 0%,
+    #a855f7 35%,
+    #3b0764 70%,
+    #000000 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #f3e8ff;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+}
+
+.card {
+  background: rgba(24, 9, 43, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 180, 254, 0.25);
+  border-radius: 28px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 520px;
+  justify-content: center;
+}
+
+.card.hidden {
+  display: none;
+}
+
+.card.active {
+  display: flex;
+}
+
+.avatar-container {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #f3e8ff, #c084fc);
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.4);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #3b1768;
+  border: 1px solid #6b21a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #e9d5ff;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.emoji-sub {
+  font-size: 22px;
+  margin-bottom: 28px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  min-height: 50px;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+  font-family: inherit;
+  touch-action: manipulation;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #a855f7, #7e22ce);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.5);
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #9333ea, #6b21a8);
+}
+
+.secondary-btn {
+  background-color: #3b1768;
+  color: #f3e8ff;
+  border: 1px solid #7e22ce;
+  position: relative;
+}
+
+.compliments-container {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 6px;
+  margin-bottom: 10px;
+}
+
+.compliments-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.compliments-container::-webkit-scrollbar-thumb {
+  background: #7e22ce;
+  border-radius: 10px;
+}
+
+.compliment-card {
+  background-color: #2e1055;
+  border: 1px solid #581c87;
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.compliment-number {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e9d5ff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.compliment-text {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.nav-btn {
+  background-color: #3b1768;
+  border: 1px solid #7e22ce;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.month-title {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.calendar-grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.day-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e9d5ff;
+  padding: 4px 0;
+}
+
+.date-cell {
+  padding: 10px 0;
+  font-size: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.date-cell.disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.date-cell:not(.disabled):hover,
+.date-cell.active-date {
+  background-color: #a855f7;
+  color: #ffffff;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.time-slot {
+  background-color: #2e1055;
+  border: 1px solid #581c87;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.time-slot:hover,
+.time-slot.active-time {
+  background-color: #a855f7;
+  color: #ffffff;
+  border-color: #a855f7;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.food-card {
+  background-color: #2e1055;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.food-card:hover,
+.food-card.selected {
+  border-color: #c084fc;
+  background-color: #3b1768;
+}
+
+.food-emoji {
+  font-size: 28px;
+}
+
+.food-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.rating-hearts {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.price-tag {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+}
+
+.disclaimer {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #e9d5ff;
+  margin-bottom: 24px;
+}
